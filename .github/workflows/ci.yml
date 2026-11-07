@@ -1,0 +1,24 @@
+name: CI Build and Lint
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v4
+
+    - name: Compile C engines
+      run: |
+        cd c
+        make
+
+    - name: Verify Python exporter
+      run: |
+        python3 python/exporter.py --formula "t*(t>>12|t>>8)" --duration 1 --out test.wav
+        test -f test.wav
