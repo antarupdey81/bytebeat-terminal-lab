@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bytebeat Terminal Lab</title>
+  <style>
+    body { background: #0d1117; color: #58a6ff; font-family: monospace; padding: 20px; }
+    .panel { border: 1px solid #30363d; background: #161b22; padding: 20px; border-radius: 6px; max-width: 500px; margin: auto; }
+    input, button { width: 100%; padding: 10px; margin-top: 10px; box-sizing: border-box; background: #0d1117; color: #c9d1d9; border: 1px solid #30363d; }
+    button { background: #238636; color: white; cursor: pointer; font-weight: bold; }
+  </style>
+</head>
+<body>
+  <div class="panel">
+    <h3>Bytebeat Terminal Lab</h3>
+    <p>Rate: 8000 Hz</p>
+    <input id="formulaInput" value="(t * (t >> 12 | t >> 8) & 63 & t >> 4)" />
+    <button id="toggleBtn">Start Audio</button>
+  </div>
+  <script src="bytebeat.js"></script>
+</body>
+</html>
