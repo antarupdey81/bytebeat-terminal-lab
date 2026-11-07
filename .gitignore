@@ -1,0 +1,15 @@
+*.o
+*.obj
+*.out
+a.out
+c/classic
+c/stereo
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.wav
+/rust/target/
+Cargo.lock
+.DS_Store
+Thumbs.db
